@@ -1,0 +1,38 @@
+body                    { font-family: sans-serif; font-size: 20px; }
+img                     { max-width: 100%; max-height: 100%; }
+
+.hugest                 { font-size: 5.0em; }
+.huger                  { font-size: 4.0em; }
+.huge                   { font-size: 2.0em; }
+.large                  { font-size: 1.2em; }
+.lite                   { font-size: 0.8em; }
+.smaller                { font-size: 0.7em; }
+.small                  { font-size: 0.6em; }
+.tiny                   { font-size: 0.5em; }
+
+.lite     .remark-code  { font-size: 0.8em; }
+.smaller  .remark-code  { font-size: 0.7em; }
+.small    .remark-code  { font-size: 0.6em; }
+
+.box                    { text-align: left; padding: 0.5em;
+                          border: 1px solid black; }
+
+.col-left               { width: 45%; float: left; }
+.col-right              { width: 45%; float: right; }
+.clear                  { clear: both; }
+
+.logos      img         { max-height: 10%; padding: 0.5em; }
+
+.logos-1    img         { width: 100%; }
+.logos-2    img         { width: 45%; }
+.logos-3    img         { width: 30%; }
+.logos-4    img         { width: 20%; }
+.logos-5    img         { width: 15%; }
+
+.w70                    { width: 70%; margin: auto; }
+.w80                    { width: 80%; margin: auto; }
+
+/*
+.footnote               { position: absolute; bottom: 3em; }
+.nobullets ul           { list-style-type: none; padding: 0; }
+*/

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type"
+      content="text/html; charset=utf-8" />
+    <title>Buffer Overflows 101</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Buffer Overflows 101
+
+.lite[
+Felix C. Stegerman `<flx@obfusk.net>`<br/>`@obfusk`
+
+2015-09-08
+]
+
+---
+
+name: default
+class: middle, center
+layout: true
+
+---
+
+.w80[
+![](hacking.jpg)
+]
+
+---
+
+.hugest[**InfoSec**]
+
+---
+
+.hugest[**CIA?**]
+
+---
+
+.huge[
+Confidentiality<br/>Integrity<br/>Availability
+]
+
+(authenticity, accountability, non-repudiation and reliability)
+
+---
+
+.huge[**Phreaking**]
+
+.w80[
+![](blue_box.jpg)
+]
+
+
+???
+
+"Mixed Signals"
+
+The term first referred to groups who had reverse engineered the
+system of tones used to route long-distance calls. By re-creating
+these tones, phreaks could switch calls from the phone handset,
+allowing free calls to be made around the world. To ease the creation
+of these tones, electronic tone generators known as blue boxes became
+a staple of the phreaker community, including future Apple Inc.
+cofounders Steve Jobs and Steve Wozniak.
+
+---
+
+.hugest[**SQL Injection**]
+
+---
+
+.w80[
+![](exploits_of_a_mom.png)
+]
+
+---
+
+```
+"SELECT * FROM users WHERE name ='" + userName + "';"
+```
+
+with userName
+
+```
+' OR '1'='1
+```
+
+becomes
+
+```
+SELECT * FROM users WHERE name = '' OR '1'='1';
+```
+
+---
+
+.hugest[**XSS**]
+
+.huge[
+(Cross-site scripting)
+]
+
+---
+
+```
+http://www.some.site/page.html?default=French
+```
+
+---
+
+```
+http://www.some.site/page.html?default=
+<script>alert(document.cookie)</script>
+```
+
+---
+
+.hugest[**Buffer Overflow**]
+
+---
+
+.w80[
+![](heartbleed_explanation_1.png)
+]
+
+---
+
+.w80[
+![](heartbleed_explanation_2.png)
+]
+
+---
+
+.w80[
+![](call_stack_layout.svg)
+]
+
+---
+
+.w80[
+![](nopsled.svg)
+]
+
+---
+
+.hugest[**demo: echo...**]
+
+https://github.com/obfusk/simple-stack-exploit
+
+???
+
+gdb + exploit
+
+---
+
+.huge[**Mitigation**]
+
+language<br/>libraries<br/>canaries<br/>NX<br/>ASLR
+
+---
+
+.hugest[**Q&A**]
+
+---
+
+.huge[**(more demos)**]
+
+---
+
+.huge[**Links**]
+
+* http://insecure.org/stf/smashstack.html
+* http://arstechnica.com/security/2015/08/how-security-flaws-work-the-buffer-overflow/
+
+    </textarea>
+    <script src="remark-0.10.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+<!-- vim: set tw=70 sw=2 sts=2 et ft=mkd : -->
